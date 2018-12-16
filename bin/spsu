@@ -1,0 +1,55 @@
+#! /bin/bash
+
+# Sparky SU allowing users to give a password and run graphical commands as root
+#
+# Created by Paweł "pavroo" Pijanowski 2018/12/16
+# Inspired by Graphical frontend for su(1) script
+# from https://sourceforge.net/p/yad-dialog/wiki/Examples/
+# Copyright 2018 under the GNU GPL3 License
+# Last updated 2018/12/16
+
+# get default's locale file
+DEFLOCDIR="/usr/share/sparky/sparky-su"
+if [ "`cat /etc/default/locale | grep pl`" != "" ]; then
+. $DEFLOCDIR/pl
+else
+. $DEFLOCDIR/en
+fi
+
+CMD="$*"
+
+if [ "$CMD" = "" ]; then
+	echo ""
+	echo "spsu usage is as follows:"
+	echo "spsu command"
+	echo ""
+	exit 1
+fi
+
+# get password
+PASS=$(yad --class="GSu" \
+    --width=400 \
+    --center \
+    --title="$LOCAL1" \
+    --text="\n$LOCAL2 <b>root</b>\n $LOCAL3: $CMD \n" \
+    --image="dialog-password" \
+    --window-icon="dialog-password" \
+    --entry --hide-text)
+
+if [ "$PASS" = "" ]; then
+	echo "password field empty, exiting now..."
+	exit 1
+fi
+
+# grant access to xserver for root user
+xhost +root@ &> /dev/null
+
+# run command
+SPIN="$(mktemp -u --tmpdir spsu.in.XXXXXXXXX)"
+SPOUT="$(mktemp -u --tmpdir spsu.out.XXXXXXXXX)"
+
+export PATH=$PATH:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin
+LC_MESSAGES=C empty -f -i $SPIN -o $SPOUT su -p root -c "$CMD"
+[[ $? -eq 0 ]] && empty -w -i $SPOUT -o $SPIN "word:" "$PASS\n"
+
+exit 0
