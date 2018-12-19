@@ -22,6 +22,7 @@ coreutils
 empty-expect
 grep
 login
+sed
 x11-xserver-utils
 yad
 
