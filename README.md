@@ -1,7 +1,7 @@
 Sparky SU
 This package provides Yad based front-end for su (spsu) allowing users to give a password and run graphical commands as root without needing to invoke su in a terminal emulator.
 
-Copyright (C) 2018 Paweł Pijanowski
+Copyright (C) 2018-2019 Paweł Pijanowski
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
