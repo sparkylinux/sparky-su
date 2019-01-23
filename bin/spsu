@@ -6,7 +6,7 @@
 # Inspired by Graphical frontend for su(1) script
 # from https://sourceforge.net/p/yad-dialog/wiki/Examples/
 # Copyright 2018-2019 under the GNU GPL3 License
-# Last updated 2019/01/04
+# Last updated 2019/01/23
 
 # get default's locale file
 DEFLOCDIR="/usr/share/sparky/sparky-su"
@@ -16,6 +16,8 @@ elif [ "`cat /etc/default/locale | grep it`" != "" ]; then
 . $DEFLOCDIR/it
 elif [ "`cat /etc/default/locale | grep pl`" != "" ]; then
 . $DEFLOCDIR/pl
+elif [ "`cat /etc/default/locale | grep pt_BR`" != "" ]; then
+. $DEFLOCDIR/pt_BR
 else
 . $DEFLOCDIR/en
 fi
