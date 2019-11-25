@@ -1,0 +1,7 @@
+# Greek localization file for Sparky SU
+# Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
+# Under the GNU GPL v3
+# Last update 2019/11/06 by jidan
+LOCAL1="Κωδικός"
+LOCAL2="Εισάγετε κωδικό password του"
+LOCAL3="για να εκτελεστεί η εντολή"
