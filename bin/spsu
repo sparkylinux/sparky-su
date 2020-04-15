@@ -40,7 +40,7 @@ if [ "$CMD" = "" ]; then
 	exit 1
 fi
 
-CLEARCMD=`echo "$CMD" | sed -e 's|./||'`
+#CLEARCMD=`echo "$CMD" | sed -e 's|./||'`
 
 mainmenu () {
 # get password
@@ -48,7 +48,7 @@ PASS=$(yad --class="GSu" \
     --width=400 \
     --center \
     --title="$LOCAL1" \
-    --text="\n$LOCAL2 <b>root</b>\n$LOCAL3: $CLEARCMD \n" \
+    --text="\n$LOCAL2 <b>root</b>\n$LOCAL3: $CMD \n" \
     --image="dialog-password" \
     --window-icon="dialog-password" \
     --entry --hide-text)
