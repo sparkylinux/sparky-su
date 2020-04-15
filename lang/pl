@@ -2,7 +2,8 @@
 # Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
 # Under the GNU GPL v3
 # Translated to Polish by pavroo
-# Last update 2018/12/16 by pavroo
+# Last update 2020/04/15 by pavroo
 LOCAL1="Hasło"
 LOCAL2="Proszę podać hasło dla"
 LOCAL3="aby wykonać polecenie"
+LOCAL4="Pole hasła jest puste, spróbuj ponownie..."

@@ -1,7 +1,9 @@
 # File di traduzione in italiano per Sparky SU
-# Copyright 2018 PaweÅ‚ "pavroo" Pijanowski <pavroo@onet.eu>
+# Copyright 2018 Pawel‚ "pavroo" Pijanowski <pavroo@onet.eu>
 # Rilasciato sotto licenza GNU GPL v3
 # Ultimo aggiornamento  2018/12/20 by Carlo
+# Last update 2020/04/15 by pavroo
 LOCAL1="Password"
 LOCAL2="Prego, inserisci la password di"
 LOCAL3="per eseguire il comando"
+LOCAL4="Password field empty, try again..."

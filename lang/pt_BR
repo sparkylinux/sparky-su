@@ -2,7 +2,8 @@
 # Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
 # pt_BR translation by Elton <eltonfabricio10@gmail.com> 2019/01/23
 # Under the GNU GPL v3
-# Last update 2018/12/16 by pavroo
+# Last update 2020/04/15 by pavroo
 LOCAL1="Senha"
 LOCAL2="Por favor, digite a senha para"
 LOCAL3="para executar o comando"
+LOCAL4="Password field empty, try again..."

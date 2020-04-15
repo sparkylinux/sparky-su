@@ -1,7 +1,8 @@
 ﻿# Fichier de localisation française de Sparky SU.
 # Copyright 2018 hiver <hiver@club-internet.fr> 2018/12/18
 # Sous licence GNU GPL v3
-# Dernière mise à jour 2018/12/18
+# Last update 2020/04/15 by pavroo
 LOCAL1="Mot de passe"
 LOCAL2="S'il vous plait, entrez le mot de passe"
 LOCAL3="pour lancer la commande"
+LOCAL4="Password field empty, try again..."
