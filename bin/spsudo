@@ -1,0 +1,84 @@
+#! /bin/bash
+
+# Sparky SU allowing users to give a password
+# and run graphical commands as a super user
+#
+# Created by Paweł "pavroo" Pijanowski 2018/12/16
+# Inspired by Graphical frontend for su(1) script
+# from https://sourceforge.net/p/yad-dialog/wiki/Examples/
+# Copyright 2018-2020 under the GNU GPL3 License
+# Last updated 2020/04/19
+
+# get default's locale file
+DEFLOCDIR="/usr/share/sparky/sparky-su"
+if [ "`cat /etc/default/locale | grep de`" != "" ]; then
+. $DEFLOCDIR/de
+elif [ "`cat /etc/default/locale | grep el`" != "" ]; then
+. $DEFLOCDIR/el
+elif [ "`cat /etc/default/locale | grep fr`" != "" ]; then
+. $DEFLOCDIR/fr
+elif [ "`cat /etc/default/locale | grep hu`" != "" ]; then
+. $DEFLOCDIR/hu
+elif [ "`cat /etc/default/locale | grep it`" != "" ]; then
+. $DEFLOCDIR/it
+elif [ "`cat /etc/default/locale | grep pl`" != "" ]; then
+. $DEFLOCDIR/pl
+elif [ "`cat /etc/default/locale | grep pt_BR`" != "" ]; then
+. $DEFLOCDIR/pt_BR
+elif [ "`cat /etc/default/locale | grep ru`" != "" ]; then
+. $DEFLOCDIR/ru
+else
+. $DEFLOCDIR/en
+fi
+
+CMD="$*"
+ME=`whoami`
+
+if [ "$CMD" = "" ]; then
+	echo ""
+	echo "spsudo usage is as follows:"
+	echo "spsudo <command>"
+	echo ""
+	exit 1
+fi
+
+if [ "$ME" = "root" ]; then
+	echo "do not run spsudo as root... exiting..."
+	exit 1
+fi
+
+mainmenu () {
+# get password
+PASS=$(yad --class="GSu" \
+	--title="$LOCAL1" \
+	--width=400 --center \
+	--text="\n$LOCAL2: <b>$ME</b>\n$LOCAL3: $CMD \n" \
+	--image="dialog-password" \
+	--window-icon="dialog-password" \
+	--entry --hide-text)
+}
+
+passmenu () {
+if [ "$PASS" = "" ]; then
+	echo "$LOCAL4"
+	yad --button=Ok:0 \
+	--title="$LOCAL1" \
+	--width=400 --center \
+	--text="$LOCAL4" \
+	--image="dialog-password" \
+	--window-icon="dialog-password"
+	mainmenu
+fi
+}
+
+runmenu () {
+# run an app with sudo
+echo "$PASS" | sudo -S $CMD
+# remove privilege
+sudo -K
+exit 0
+}
+
+mainmenu
+passmenu
+runmenu

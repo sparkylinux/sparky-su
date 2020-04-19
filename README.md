@@ -1,5 +1,5 @@
 Sparky SU
-This package provides Yad based front-end for su (spsu) allowing users to give a password and run graphical commands as root without needing to invoke su in a terminal emulator.
+This package provides Yad based front-end for su (spsu) allowing users to give a password and run graphical commands as root without needing to invoke su in a terminal emulator, and spsudo to run an application as a super user.
 
 Copyright (C) 2018-2020 Paweł Pijanowski
 
@@ -23,6 +23,7 @@ empty-expect
 grep
 login
 sed
+sudo
 x11-xserver-utils
 yad
 
