@@ -16,6 +16,7 @@
 
 if [ "$1" = "uninstall" ]; then
 	rm -f /usr/bin/spsu
+	rm -r /usr/bin/sparky-su
 	rm -rf /usr/share/sparky/sparky-su
 else
 	cp bin/* /usr/bin/
