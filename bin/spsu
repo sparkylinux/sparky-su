@@ -1,12 +1,13 @@
 #! /bin/bash
 
-# Sparky SU allowing users to give a password and run graphical commands as root
+# Sparky SU allowing users to give a password
+# and run graphical commands as root
 #
 # Created by Paweł "pavroo" Pijanowski 2018/12/16
 # Inspired by Graphical frontend for su(1) script
 # from https://sourceforge.net/p/yad-dialog/wiki/Examples/
 # Copyright 2018-2020 under the GNU GPL3 License
-# Last updated 2020/04/15
+# Last updated 2020/04/20
 
 # get default's locale file
 DEFLOCDIR="/usr/share/sparky/sparky-su"
@@ -67,6 +68,25 @@ if [ "$PASS" = "" ]; then
 fi
 }
 
+passcheckmenu () {
+if [ "$PASS" != "" ]; then
+	sudo sparky-pass-check root $PASS
+	if [ -f /tmp/sparky-passcheck ]; then
+		CHECKPASS=`cat /tmp/sparky-passcheck | grep true`
+		if [ "$CHECKPASS" = "" ]; then
+		echo "$LOCAL5 root !"
+			yad --button=Ok:0 \
+			--title="$LOCAL1" \
+			--width=400 --center \
+			--image="dialog-password" \
+			--window-icon="dialog-password" \
+			--text="$LOCAL5 root ! \n$LOCAL6"
+			mainmenu
+		fi
+	fi
+fi
+}
+
 runmenu () {
 # grant access to xserver for root user
 xhost +root@ &> /dev/null
@@ -82,4 +102,5 @@ LC_MESSAGES=C empty -f -i $SPIN -o $SPOUT su -p root -c "$CMD"
 
 mainmenu
 passmenu
+passcheckmenu
 runmenu

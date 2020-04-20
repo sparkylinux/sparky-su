@@ -1,13 +1,13 @@
 #! /bin/bash
 
-# Sparky SU allowing users to give a password
+# Sparky SUDO allowing users to give a password
 # and run graphical commands as a super user
 #
 # Created by Paweł "pavroo" Pijanowski 2018/12/16
 # Inspired by Graphical frontend for su(1) script
 # from https://sourceforge.net/p/yad-dialog/wiki/Examples/
 # Copyright 2018-2020 under the GNU GPL3 License
-# Last updated 2020/04/19
+# Last updated 2020/04/20
 
 # get default's locale file
 DEFLOCDIR="/usr/share/sparky/sparky-su"
@@ -71,6 +71,25 @@ if [ "$PASS" = "" ]; then
 fi
 }
 
+passcheckmenu () {
+if [ "$PASS" != "" ]; then
+	sudo sparky-pass-check $ME $PASS
+	if [ -f /tmp/sparky-passcheck ]; then
+		CHECKPASS=`cat /tmp/sparky-passcheck | grep true`
+		if [ "$CHECKPASS" = "" ]; then
+		echo "$LOCAL5 $ME !"
+			yad --button=Ok:0 \
+			--title="$LOCAL1" \
+			--width=400 --center \
+			--image="dialog-password" \
+			--window-icon="dialog-password" \
+			--text="$LOCAL5 $ME ! \n$LOCAL6"
+			mainmenu
+		fi
+	fi
+fi
+}
+
 runmenu () {
 # run an app with sudo
 echo "$PASS" | sudo -S $CMD
@@ -81,4 +100,5 @@ exit 0
 
 mainmenu
 passmenu
+passcheckmenu
 runmenu

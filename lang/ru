@@ -1,8 +1,10 @@
 # Файл русской локализации для Sparky SU
 # Copyright 2018 Pawel‚ "pavroo" Pijanowski <pavroo@onet.eu>
 # Под лицензией GNU GPL v3
-# Last update 2020/04/15 by pavroo
+# Last update 2020/04/20 by pavroo
 LOCAL1="Пароль"
 LOCAL2="Пожалуйста, введите пароль для"
 LOCAL3="запуска команды"
 LOCAL4="Password field empty, try again..."
+LOCAL5="Wrong password for"
+LOCAL6="Plase try again."

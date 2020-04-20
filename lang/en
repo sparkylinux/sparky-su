@@ -1,8 +1,10 @@
 # English localization file for Sparky SU
 # Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
 # Under the GNU GPL v3
-# Last update 2020/04/15 by pavroo
+# Last update 2020/04/20 by pavroo
 LOCAL1="Password"
 LOCAL2="Please enter password for"
 LOCAL3="to run command"
 LOCAL4="Password field empty, try again..."
+LOCAL5="Wrong password for"
+LOCAL6="Plase try again."

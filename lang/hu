@@ -1,8 +1,10 @@
 # Hungarian localization file for Sparky SU (Translated by Nemomen)
 # Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
 # Under the GNU GPL v3
-# Last update 2020/04/15 by pavroo
+# Last update 2020/04/20 by pavroo
 LOCAL1="Jelszó"
 LOCAL2="Kérjük, írja be a jelszót a (következő) részére!:"
 LOCAL3="futtassa a parancsot!"
 LOCAL4="Password field empty, try again..."
+LOCAL5="Wrong password for"
+LOCAL6="Plase try again."
