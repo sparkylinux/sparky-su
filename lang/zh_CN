@@ -1,10 +1,11 @@
 # Chinese(Simplified) localization file for Sparky SU
 # Copyright 2018 Paweł "pavroo" Pijanowski <pavroo@onet.eu>
 # Under the GNU GPL v3
+# Last update 2020/04/21 by xingjiapeng
 # Translate from English(Last update 2020/04/20 by pavroo)
 LOCAL1="密码"
-LOCAL2="Please enter password for"
-LOCAL3="to run command"
+LOCAL2="请输入该用户的密码："
+LOCAL3="来执行命令"
 LOCAL4="密码不能为空，请重试……"
 LOCAL5="密码错误"
 LOCAL6="请重试。"
