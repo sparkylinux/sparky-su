@@ -7,7 +7,7 @@
 # Inspired by Graphical frontend for su(1) script
 # from https://sourceforge.net/p/yad-dialog/wiki/Examples/
 # Copyright 2018-2020 under the GNU GPL3 License
-# Last updated 2020/10/05
+# Last updated 2020/10/21
 
 # get default's locale file
 DEFLOCDIR="/usr/share/sparky/sparky-su"
@@ -94,12 +94,13 @@ runmenu () {
 xhost +root@ &> /dev/null
 
 # run command
-SPIN="$(mktemp -u --tmpdir spsu.in.XXXXXXXXX)"
-SPOUT="$(mktemp -u --tmpdir spsu.out.XXXXXXXXX)"
+#SPIN="$(mktemp -u --tmpdir spsu.in.XXXXXXXXX)"
+#SPOUT="$(mktemp -u --tmpdir spsu.out.XXXXXXXXX)"
 
 export PATH=$PATH:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin
-LC_MESSAGES=C empty -f -i $SPIN -o $SPOUT su -p root -c "$CMD"
-[[ $? -eq 0 ]] && empty -w -i $SPOUT -o $SPIN "word:" "$PASS\n"
+#LC_MESSAGES=C empty -f -i $SPIN -o $SPOUT su -p root -c "$CMD"
+#[[ $? -eq 0 ]] && empty -w -i $SPOUT -o $SPIN "word:" "$PASS\n"
+echo "$PASS" | su -p root -c "$CMD"
 }
 
 mainmenu
