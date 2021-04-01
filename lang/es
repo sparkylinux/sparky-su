@@ -1,0 +1,10 @@
+# Spanish localization file for Sparky SU
+# Copyright 2018 PaweÅ‚ "pavroo" Pijanowski <pavroo@onet.eu>
+# Under the GNU GPL v3
+# Last update 2021/03/29 by Leonardo Muñoz
+LOCAL1="Clave"
+LOCAL2="Por favor coloque su clave para"
+LOCAL3="ejecutar comando"
+LOCAL4="El campo de contraseña está vacío, inténtalo de nuevo ..."
+LOCAL5="Contraseña incorrecta para"
+LOCAL6="Por favor, inténtalo de nuevo."
