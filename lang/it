@@ -2,10 +2,11 @@
 # Copyright 2018 Pawelâ€š "pavroo" Pijanowski <pavroo@onet.eu>
 # Rilasciato sotto licenza GNU GPL v3
 # Ultimo aggiornamento  2018/12/20 by Carlo
+# Ultimo aggiornamento 2022/05/18 by Yodel Sinatra <mastodon.uno/@YodelSinatra>
 # Last update 2020/04/20 by pavroo
 LOCAL1="Password"
-LOCAL2="Prego, inserisci la password di"
+LOCAL2="Per favore, inserisci la password di"
 LOCAL3="per eseguire il comando"
-LOCAL4="Hai lasciato il campo della Password vuoto, prova di nuovo..."
+LOCAL4="Hai lasciato il campo della Password vuoto, riprova..."
 LOCAL5="Password errata per"
 LOCAL6="Prova di nuovo."
