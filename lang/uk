@@ -1,0 +1,12 @@
+# Файл української локалізації для Sparky SU.
+# Ukrainian localization made by XalisRatt 2023/01/19 (I almost never use email, so contact me on matrix instead 
+# <@xalisqull:arcticfoxes.net> or discord <XalisRatt#2308>
+# Copyright 2018 Pawel‚ "pavroo" Pijanowski <pavroo@onet.eu>
+# Under the GNU GPL v3
+# Last update by pavroo 2023/01/25
+LOCAL1="Пароль"
+LOCAL2="Будь ласка, введіть пароль для"
+LOCAL3="запуску команди"
+LOCAL4="Поле для паролю порожнє, спробуйте знову..."
+LOCAL5="Неправильний пароль для"
+LOCAL6="Будь ласка, спробуйте знову."
