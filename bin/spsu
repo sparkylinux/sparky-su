@@ -7,7 +7,7 @@
 # Inspired by Graphical frontend for su(1) script
 # from https://sourceforge.net/p/yad-dialog/wiki/Examples/
 # Copyright 2018-2023 under the GNU GPL3 License
-# Last updated 2023/01/25
+# Last updated 2023/05/02
 
 # get default's locale file
 DEFLOCDIR="/usr/share/sparky/sparky-su"
@@ -74,24 +74,24 @@ if [ "$PASS" = "" ]; then
 fi
 }
 
-passcheckmenu () {
-if [ "$PASS" != "" ]; then
-	sudo sparky-pass-check root $PASS
-	if [ -f /tmp/sparky-passcheck ]; then
-		CHECKPASS=`cat /tmp/sparky-passcheck | grep true`
-		if [ "$CHECKPASS" = "" ]; then
-		echo "$LOCAL5 root !"
-			yad --button=Ok:0 \
-			--title="$LOCAL1" \
-			--width=400 --center \
-			--image="dialog-password" \
-			--window-icon="dialog-password" \
-			--text="\n$LOCAL5:\n<b>root</b>\n\n$LOCAL6"
-			mainmenu
-		fi
-	fi
-fi
-}
+#passcheckmenu () {
+#if [ "$PASS" != "" ]; then
+#	sudo sparky-pass-check root $PASS
+#	if [ -f /tmp/sparky-passcheck ]; then
+#		CHECKPASS=`cat /tmp/sparky-passcheck | grep true`
+#		if [ "$CHECKPASS" = "" ]; then
+#		echo "$LOCAL5 root !"
+#			yad --button=Ok:0 \
+#			--title="$LOCAL1" \
+#			--width=400 --center \
+#			--image="dialog-password" \
+#			--window-icon="dialog-password" \
+#			--text="\n$LOCAL5:\n<b>root</b>\n\n$LOCAL6"
+#			mainmenu
+#		fi
+#	fi
+#fi
+#}
 
 runmenu () {
 # grant access to xserver for root user
@@ -109,5 +109,5 @@ echo "$PASS" | su -p root -c "$CMD"
 
 mainmenu
 passmenu
-passcheckmenu
 runmenu
+#passcheckmenu

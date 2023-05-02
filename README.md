@@ -22,10 +22,10 @@ coreutils
 grep
 login
 sed
-sparky-pass-check
 sudo
 x11-xserver-utils
 yad
+#sparky-pass-check
 
 Install:
 -------------
