@@ -1,0 +1,10 @@
+# Suomenkielinen lokalisointitiedosto Sparky SU:lle
+# Copyright 2018 PaweÅ‚ "pavroo" Pijanowski <pavroo@onet.eu>
+# GNU GPL v3:n alla
+# Viimeisin päivitys 2020/04/20 pavroo
+LOCAL1="Salasana"
+LOCAL2="Anna salasana"
+LOCAL3="suorittaa komennon"
+LOCAL4="Salasanakenttä tyhjä, yritä uudelleen..."
+LOCAL5="Väärä salasana kohteelle"
+LOCAL6="Yritä uudelleen."
