@@ -1,10 +1,10 @@
 # German localization file by Sajmon
-# Copyright 2019 Piotr "Sajmon" Simon <sajmon@inode.at> 2019/02/14
+# Copyright 2019 Piotr "Sajmon" Simon <sajmon@inode.at> 2019/02/14 (aktualisiert 27.05.2025)
 # Under the GNU GPL v3
 # Last update 2020/04/20 by pavroo
 LOCAL1="Passwort"
 LOCAL2="Bitte geben Sie das Passwort ein für"
 LOCAL3="zum Ausführen des Befehls"
-LOCAL4="Password field empty, try again..."
-LOCAL5="Wrong password for"
-LOCAL6="Please try again."
+LOCAL4="Passwortfeld leer, versuchen Sie es erneut ..."
+LOCAL5="Falsches Passwort für"
+LOCAL6="Bitte versuchen Sie es erneut."
